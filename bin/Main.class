@@ -1,0 +1,376 @@
+// Compiled from Main.java (version 1.8 : 52.0, super bit)
+public class Main {
+  
+  // Method descriptor #6 ()V
+  // Stack: 1, Locals: 1
+  public Main();
+    0  aload_0 [this]
+    1  invokespecial java.lang.Object() [8]
+    4  return
+      Line numbers:
+        [pc: 0, line: 3]
+      Local variable table:
+        [pc: 0, pc: 5] local: this index: 0 type: Main
+  
+  // Method descriptor #15 ([Ljava/lang/String;)V
+  // Stack: 4, Locals: 11
+  public static void main(java.lang.String[] args);
+      0  new java.util.Scanner [16]
+      3  dup
+      4  getstatic java.lang.System.in : java.io.InputStream [18]
+      7  invokespecial java.util.Scanner(java.io.InputStream) [24]
+     10  astore_1 [input]
+     11  getstatic java.lang.System.out : java.io.PrintStream [27]
+     14  ldc <String "What problems would you like to practice (+, -, /, *)?"> [31]
+     16  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+     19  aload_1 [input]
+     20  invokevirtual java.util.Scanner.nextLine() : java.lang.String [39]
+     23  astore_2 [inputAnswer]
+     24  aload_2 [inputAnswer]
+     25  ldc <String "+"> [43]
+     27  invokevirtual java.lang.String.equals(java.lang.Object) : boolean [45]
+     30  ifne 79
+     33  aload_2 [inputAnswer]
+     34  ldc <String "-"> [51]
+     36  invokevirtual java.lang.String.equals(java.lang.Object) : boolean [45]
+     39  ifne 79
+     42  aload_2 [inputAnswer]
+     43  ldc <String "/"> [53]
+     45  invokevirtual java.lang.String.equals(java.lang.Object) : boolean [45]
+     48  ifne 79
+     51  aload_2 [inputAnswer]
+     52  ldc <String "*"> [55]
+     54  invokevirtual java.lang.String.equals(java.lang.Object) : boolean [45]
+     57  ifeq 63
+     60  goto 79
+     63  getstatic java.lang.System.out : java.io.PrintStream [27]
+     66  ldc <String "Invalid input, please enter one operation (+, -, /, *)"> [57]
+     68  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+     71  aload_1 [input]
+     72  invokevirtual java.util.Scanner.nextLine() : java.lang.String [39]
+     75  astore_2 [inputAnswer]
+     76  goto 24
+     79  iconst_0
+     80  istore_3 [counter]
+     81  new java.util.Random [59]
+     84  dup
+     85  invokespecial java.util.Random() [61]
+     88  astore 10 [random]
+     90  goto 557
+     93  aload_2 [inputAnswer]
+     94  ldc <String "+"> [43]
+     96  invokevirtual java.lang.String.equals(java.lang.Object) : boolean [45]
+     99  ifeq 196
+    102  aload 10 [random]
+    104  bipush 13
+    106  invokevirtual java.util.Random.nextInt(int) : int [62]
+    109  istore 4 [num1]
+    111  aload 10 [random]
+    113  bipush 13
+    115  invokevirtual java.util.Random.nextInt(int) : int [62]
+    118  istore 5 [num2]
+    120  iload 4 [num1]
+    122  iload 5 [num2]
+    124  iadd
+    125  istore 6 [answer]
+    127  getstatic java.lang.System.out : java.io.PrintStream [27]
+    130  new java.lang.StringBuilder [66]
+    133  dup
+    134  iload 4 [num1]
+    136  invokestatic java.lang.String.valueOf(int) : java.lang.String [68]
+    139  invokespecial java.lang.StringBuilder(java.lang.String) [72]
+    142  ldc <String " + "> [74]
+    144  invokevirtual java.lang.StringBuilder.append(java.lang.String) : java.lang.StringBuilder [76]
+    147  iload 5 [num2]
+    149  invokevirtual java.lang.StringBuilder.append(int) : java.lang.StringBuilder [80]
+    152  invokevirtual java.lang.StringBuilder.toString() : java.lang.String [83]
+    155  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+    158  aload_1 [input]
+    159  invokevirtual java.util.Scanner.nextInt() : int [86]
+    162  istore 7 [userAnswer]
+    164  iload 7 [userAnswer]
+    166  iload 6 [answer]
+    168  if_icmpne 185
+    171  getstatic java.lang.System.out : java.io.PrintStream [27]
+    174  ldc <String "You got it right!"> [89]
+    176  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+    179  iinc 3 1 [counter]
+    182  goto 557
+    185  getstatic java.lang.System.out : java.io.PrintStream [27]
+    188  ldc <String "You got it wrong!"> [91]
+    190  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+    193  goto 557
+    196  aload_2 [inputAnswer]
+    197  ldc <String "-"> [51]
+    199  invokevirtual java.lang.String.equals(java.lang.Object) : boolean [45]
+    202  ifeq 299
+    205  aload 10 [random]
+    207  bipush 13
+    209  invokevirtual java.util.Random.nextInt(int) : int [62]
+    212  istore 4 [num1]
+    214  aload 10 [random]
+    216  bipush 13
+    218  invokevirtual java.util.Random.nextInt(int) : int [62]
+    221  istore 5 [num2]
+    223  iload 4 [num1]
+    225  iload 5 [num2]
+    227  isub
+    228  istore 6 [answer]
+    230  getstatic java.lang.System.out : java.io.PrintStream [27]
+    233  new java.lang.StringBuilder [66]
+    236  dup
+    237  iload 4 [num1]
+    239  invokestatic java.lang.String.valueOf(int) : java.lang.String [68]
+    242  invokespecial java.lang.StringBuilder(java.lang.String) [72]
+    245  ldc <String " - "> [93]
+    247  invokevirtual java.lang.StringBuilder.append(java.lang.String) : java.lang.StringBuilder [76]
+    250  iload 5 [num2]
+    252  invokevirtual java.lang.StringBuilder.append(int) : java.lang.StringBuilder [80]
+    255  invokevirtual java.lang.StringBuilder.toString() : java.lang.String [83]
+    258  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+    261  aload_1 [input]
+    262  invokevirtual java.util.Scanner.nextInt() : int [86]
+    265  istore 7 [userAnswer]
+    267  iload 7 [userAnswer]
+    269  iload 6 [answer]
+    271  if_icmpne 288
+    274  getstatic java.lang.System.out : java.io.PrintStream [27]
+    277  ldc <String "You got it right!"> [89]
+    279  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+    282  iinc 3 1 [counter]
+    285  goto 557
+    288  getstatic java.lang.System.out : java.io.PrintStream [27]
+    291  ldc <String "You got it wrong!"> [91]
+    293  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+    296  goto 557
+    299  aload_2 [inputAnswer]
+    300  ldc <String "/"> [53]
+    302  invokevirtual java.lang.String.equals(java.lang.Object) : boolean [45]
+    305  ifeq 466
+    308  aload 10 [random]
+    310  bipush 13
+    312  invokevirtual java.util.Random.nextInt(int) : int [62]
+    315  istore 4 [num1]
+    317  aload 10 [random]
+    319  bipush 13
+    321  invokevirtual java.util.Random.nextInt(int) : int [62]
+    324  istore 5 [num2]
+    326  goto 338
+    329  aload 10 [random]
+    331  bipush 13
+    333  invokevirtual java.util.Random.nextInt(int) : int [62]
+    336  istore 5 [num2]
+    338  iload 5 [num2]
+    340  ifeq 329
+    343  goto 355
+    346  aload 10 [random]
+    348  bipush 13
+    350  invokevirtual java.util.Random.nextInt(int) : int [62]
+    353  istore 4 [num1]
+    355  iload 4 [num1]
+    357  iload 5 [num2]
+    359  if_icmplt 346
+    362  iload 4 [num1]
+    364  iload 5 [num2]
+    366  idiv
+    367  istore 6 [answer]
+    369  iload 4 [num1]
+    371  iload 5 [num2]
+    373  irem
+    374  istore 8 [answerRemainder]
+    376  getstatic java.lang.System.out : java.io.PrintStream [27]
+    379  new java.lang.StringBuilder [66]
+    382  dup
+    383  iload 4 [num1]
+    385  invokestatic java.lang.String.valueOf(int) : java.lang.String [68]
+    388  invokespecial java.lang.StringBuilder(java.lang.String) [72]
+    391  ldc <String " / "> [95]
+    393  invokevirtual java.lang.StringBuilder.append(java.lang.String) : java.lang.StringBuilder [76]
+    396  iload 5 [num2]
+    398  invokevirtual java.lang.StringBuilder.append(int) : java.lang.StringBuilder [80]
+    401  invokevirtual java.lang.StringBuilder.toString() : java.lang.String [83]
+    404  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+    407  aload_1 [input]
+    408  invokevirtual java.util.Scanner.nextInt() : int [86]
+    411  istore 7 [userAnswer]
+    413  getstatic java.lang.System.out : java.io.PrintStream [27]
+    416  ldc <String "Please enter the remainder"> [97]
+    418  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+    421  aload_1 [input]
+    422  invokevirtual java.util.Scanner.nextInt() : int [86]
+    425  istore 9 [useranswerRemainder]
+    427  iload 7 [userAnswer]
+    429  iload 6 [answer]
+    431  if_icmpne 455
+    434  iload 9 [useranswerRemainder]
+    436  iload 8 [answerRemainder]
+    438  if_icmpne 455
+    441  getstatic java.lang.System.out : java.io.PrintStream [27]
+    444  ldc <String "You got it right!"> [89]
+    446  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+    449  iinc 3 1 [counter]
+    452  goto 557
+    455  getstatic java.lang.System.out : java.io.PrintStream [27]
+    458  ldc <String "You got it wrong!"> [91]
+    460  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+    463  goto 557
+    466  aload 10 [random]
+    468  bipush 13
+    470  invokevirtual java.util.Random.nextInt(int) : int [62]
+    473  istore 4 [num1]
+    475  aload 10 [random]
+    477  bipush 13
+    479  invokevirtual java.util.Random.nextInt(int) : int [62]
+    482  istore 5 [num2]
+    484  iload 4 [num1]
+    486  iload 5 [num2]
+    488  imul
+    489  istore 6 [answer]
+    491  getstatic java.lang.System.out : java.io.PrintStream [27]
+    494  new java.lang.StringBuilder [66]
+    497  dup
+    498  iload 4 [num1]
+    500  invokestatic java.lang.String.valueOf(int) : java.lang.String [68]
+    503  invokespecial java.lang.StringBuilder(java.lang.String) [72]
+    506  ldc <String " * "> [99]
+    508  invokevirtual java.lang.StringBuilder.append(java.lang.String) : java.lang.StringBuilder [76]
+    511  iload 5 [num2]
+    513  invokevirtual java.lang.StringBuilder.append(int) : java.lang.StringBuilder [80]
+    516  invokevirtual java.lang.StringBuilder.toString() : java.lang.String [83]
+    519  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+    522  aload_1 [input]
+    523  invokevirtual java.util.Scanner.nextInt() : int [86]
+    526  istore 7 [userAnswer]
+    528  iload 7 [userAnswer]
+    530  iload 6 [answer]
+    532  if_icmpne 549
+    535  getstatic java.lang.System.out : java.io.PrintStream [27]
+    538  ldc <String "You got it right!"> [89]
+    540  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+    543  iinc 3 1 [counter]
+    546  goto 557
+    549  getstatic java.lang.System.out : java.io.PrintStream [27]
+    552  ldc <String "You got it wrong!"> [91]
+    554  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+    557  iload_3 [counter]
+    558  iconst_5
+    559  if_icmpne 93
+    562  getstatic java.lang.System.out : java.io.PrintStream [27]
+    565  ldc <String "Congrads, you've answered all questions correctly!"> [101]
+    567  invokevirtual java.io.PrintStream.println(java.lang.String) : void [33]
+    570  aload_1 [input]
+    571  invokevirtual java.util.Scanner.close() : void [103]
+    574  return
+      Line numbers:
+        [pc: 0, line: 5]
+        [pc: 11, line: 7]
+        [pc: 19, line: 8]
+        [pc: 24, line: 10]
+        [pc: 60, line: 11]
+        [pc: 63, line: 13]
+        [pc: 71, line: 14]
+        [pc: 76, line: 9]
+        [pc: 79, line: 17]
+        [pc: 81, line: 24]
+        [pc: 90, line: 25]
+        [pc: 93, line: 26]
+        [pc: 102, line: 27]
+        [pc: 111, line: 28]
+        [pc: 120, line: 29]
+        [pc: 127, line: 30]
+        [pc: 158, line: 31]
+        [pc: 164, line: 32]
+        [pc: 171, line: 33]
+        [pc: 179, line: 34]
+        [pc: 182, line: 35]
+        [pc: 185, line: 37]
+        [pc: 193, line: 40]
+        [pc: 196, line: 41]
+        [pc: 205, line: 42]
+        [pc: 214, line: 43]
+        [pc: 223, line: 44]
+        [pc: 230, line: 45]
+        [pc: 261, line: 46]
+        [pc: 267, line: 47]
+        [pc: 274, line: 48]
+        [pc: 282, line: 49]
+        [pc: 285, line: 50]
+        [pc: 288, line: 52]
+        [pc: 296, line: 55]
+        [pc: 299, line: 56]
+        [pc: 308, line: 57]
+        [pc: 317, line: 58]
+        [pc: 326, line: 60]
+        [pc: 329, line: 61]
+        [pc: 338, line: 60]
+        [pc: 343, line: 62]
+        [pc: 346, line: 63]
+        [pc: 355, line: 62]
+        [pc: 362, line: 65]
+        [pc: 369, line: 66]
+        [pc: 376, line: 68]
+        [pc: 407, line: 69]
+        [pc: 413, line: 70]
+        [pc: 421, line: 71]
+        [pc: 427, line: 73]
+        [pc: 441, line: 74]
+        [pc: 449, line: 75]
+        [pc: 452, line: 76]
+        [pc: 455, line: 78]
+        [pc: 463, line: 81]
+        [pc: 466, line: 83]
+        [pc: 475, line: 84]
+        [pc: 484, line: 85]
+        [pc: 491, line: 86]
+        [pc: 522, line: 87]
+        [pc: 528, line: 88]
+        [pc: 535, line: 89]
+        [pc: 543, line: 90]
+        [pc: 546, line: 91]
+        [pc: 549, line: 93]
+        [pc: 557, line: 25]
+        [pc: 562, line: 99]
+        [pc: 570, line: 100]
+        [pc: 574, line: 101]
+      Local variable table:
+        [pc: 0, pc: 575] local: args index: 0 type: java.lang.String[]
+        [pc: 11, pc: 575] local: input index: 1 type: java.util.Scanner
+        [pc: 24, pc: 575] local: inputAnswer index: 2 type: java.lang.String
+        [pc: 81, pc: 575] local: counter index: 3 type: int
+        [pc: 111, pc: 196] local: num1 index: 4 type: int
+        [pc: 214, pc: 299] local: num1 index: 4 type: int
+        [pc: 317, pc: 466] local: num1 index: 4 type: int
+        [pc: 475, pc: 557] local: num1 index: 4 type: int
+        [pc: 120, pc: 196] local: num2 index: 5 type: int
+        [pc: 223, pc: 299] local: num2 index: 5 type: int
+        [pc: 326, pc: 466] local: num2 index: 5 type: int
+        [pc: 484, pc: 557] local: num2 index: 5 type: int
+        [pc: 127, pc: 196] local: answer index: 6 type: int
+        [pc: 230, pc: 299] local: answer index: 6 type: int
+        [pc: 369, pc: 466] local: answer index: 6 type: int
+        [pc: 491, pc: 557] local: answer index: 6 type: int
+        [pc: 164, pc: 196] local: userAnswer index: 7 type: int
+        [pc: 267, pc: 299] local: userAnswer index: 7 type: int
+        [pc: 413, pc: 466] local: userAnswer index: 7 type: int
+        [pc: 528, pc: 557] local: userAnswer index: 7 type: int
+        [pc: 376, pc: 466] local: answerRemainder index: 8 type: int
+        [pc: 427, pc: 466] local: useranswerRemainder index: 9 type: int
+        [pc: 90, pc: 575] local: random index: 10 type: java.util.Random
+      Stack map table: number of frames 16
+        [pc: 24, append: {java.util.Scanner, java.lang.String}]
+        [pc: 63, same]
+        [pc: 79, same]
+        [pc: 93, full, stack: {}, locals: {java.lang.String[], java.util.Scanner, java.lang.String, int, _, _, _, _, _, _, java.util.Random}]
+        [pc: 185, full, stack: {}, locals: {java.lang.String[], java.util.Scanner, java.lang.String, int, int, int, int, int, _, _, java.util.Random}]
+        [pc: 196, full, stack: {}, locals: {java.lang.String[], java.util.Scanner, java.lang.String, int, _, _, _, _, _, _, java.util.Random}]
+        [pc: 288, full, stack: {}, locals: {java.lang.String[], java.util.Scanner, java.lang.String, int, int, int, int, int, _, _, java.util.Random}]
+        [pc: 299, full, stack: {}, locals: {java.lang.String[], java.util.Scanner, java.lang.String, int, _, _, _, _, _, _, java.util.Random}]
+        [pc: 329, full, stack: {}, locals: {java.lang.String[], java.util.Scanner, java.lang.String, int, int, int, _, _, _, _, java.util.Random}]
+        [pc: 338, same]
+        [pc: 346, same]
+        [pc: 355, same]
+        [pc: 455, full, stack: {}, locals: {java.lang.String[], java.util.Scanner, java.lang.String, int, int, int, int, int, int, int, java.util.Random}]
+        [pc: 466, full, stack: {}, locals: {java.lang.String[], java.util.Scanner, java.lang.String, int, _, _, _, _, _, _, java.util.Random}]
+        [pc: 549, full, stack: {}, locals: {java.lang.String[], java.util.Scanner, java.lang.String, int, int, int, int, int, _, _, java.util.Random}]
+        [pc: 557, full, stack: {}, locals: {java.lang.String[], java.util.Scanner, java.lang.String, int, _, _, _, _, _, _, java.util.Random}]
+}
